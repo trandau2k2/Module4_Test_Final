@@ -9,7 +9,7 @@
   <tr *ngFor="let book of books;">
     <!--    *ngIf="book.read == false;"-->
     <td >{{book.name}}</td>
-    <ng-template [ngIf]="book.field == false">
+    <ng-template [ngIf]="book.read == false">
       <td>Chưa đọc</td>
     </ng-template>
     <td>
