@@ -1,19 +1,20 @@
+<h1>Unreading List</h1>
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">Unreading List </th>
+    <th scope="col">Unreading List</th>
     <th scope="col">Mark</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let book of books;">
-    <!--    *ngIf="book.read == false;"-->
-    <td >{{book.name}}</td>
+    <td>{{book.name}}</td>
     <ng-template [ngIf]="book.read == false">
       <td>Chưa đọc</td>
     </ng-template>
     <td>
-      <button class="btn btn-danger" (click)="delete(book.id)">Delete</button>
+      <button class="btn btn-danger" >Delete</button>
+<!--      (click)="delete(book.id)"-->
     </td>
   </tr>
   </tbody>

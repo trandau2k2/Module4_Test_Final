@@ -5,7 +5,7 @@ import {BookModule} from './modules/book/book.module';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: MainComponent,
     children: [
       {

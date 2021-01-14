@@ -4,6 +4,7 @@ import {BookListComponent} from '../../components/book/book-list/book-list.compo
 import {RouterModule, Routes} from '@angular/router';
 import {BookAddComponent} from '../../components/book/book-add/book-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {BookListUnreadComponent} from "../../components/book/book-list-unread/book-list-unread.component";
 
 const routes: Routes = [
   {
@@ -11,8 +12,12 @@ const routes: Routes = [
     component: BookListComponent
   },
   {
-    path: 'add',
+    path: '',
     component: BookAddComponent
+  },
+  {
+    path: '',
+    component: BookListUnreadComponent
   },
 ];
 
@@ -20,6 +25,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     BookListComponent,
+    BookAddComponent,
+    BookListUnreadComponent
+  ],
+  exports: [
     BookAddComponent
   ],
   imports: [

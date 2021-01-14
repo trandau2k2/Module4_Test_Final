@@ -1,22 +1,8 @@
-<div class="card">
-  <div class="card-header">
-    Add New Book
-  </div>
-  <div class="card-body">
-    <form [formGroup]="formAddBook" (ngSubmit)="submit()">
-      <div class="mb-3">
-        <label class="form-label">Name</label>
-        <input type="text" formControlName="name" class="form-control">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Mark</label>
-        <select formControlName="field" class="form-select" aria-label="Default select example">
-          <option selected>Open this </option>
-          <option value="true">Read</option>
-          <option value="false">Unread</option>
-        </select>
-      </div>
-      <button [disabled]="formAddBook.invalid" type="submit" class="btn btn-primary">Create</button>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <form class="d-flex" [formGroup]="formAddBook" (ngSubmit)="submit()">
+      <input class="form-control me-2" type="search" placeholder="New Book Name" aria-label="Add">
+      <button class="btn btn-outline-success" type="submit">Add</button>
     </form>
   </div>
-</div>
+</nav>

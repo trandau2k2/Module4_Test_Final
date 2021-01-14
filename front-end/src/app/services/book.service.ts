@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {HttpResult} from '../_core/HttpResult';
 import {environment} from '../../environments/environment';
 import {IBook} from '../components/IBook';
 
@@ -13,15 +12,19 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
 
-  getAll(): Observable<HttpResult> {
-    return this.http.get<HttpResult>(environment.url_backend + 'books');
+  getAll(): Observable<IBook[]> {
+    return this.http.get<IBook[]>(environment.url_backend + 'books');
   }
+  //
+  // destroy(id: number): Observable<IBook[]> {
+  //   return this.http.delete<IBook>(environment.url_backend + 'books');
+  // }
+  //
+  // update(id: number):Observable<IBook> {
+  //   return this.http.put<IBook>(environment.url_backend + 'books' + id + 'update')
+  // }
 
-  destroy(id: number): Observable<HttpResult> {
-    return this.http.delete<HttpResult>(environment.url_backend + 'books/' + id + '/destroy');
-  }
-
-  create(data: IBook): Observable<HttpResult> {
-    return this.http.post<HttpResult>(environment.url_backend + 'books/add', data);
+  create(data: IBook): Observable<IBook> {
+    return this.http.post<IBook>(environment.url_backend + 'books', data);
   }
 }

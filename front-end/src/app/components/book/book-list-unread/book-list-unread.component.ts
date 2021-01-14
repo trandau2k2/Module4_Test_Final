@@ -10,8 +10,7 @@ import {HttpResult} from '../../../_core/HttpResult';
 })
 export class BookListUnreadComponent implements OnInit {
 
-  books: IBook[] | undefined;
-  message: string | undefined;
+  books: IBook[];
 
   constructor(private bookService: BookService) {
   }
@@ -20,26 +19,23 @@ export class BookListUnreadComponent implements OnInit {
     this.getAllBook();
   }
 
-  getAllBook(): void {
-    this.bookService.getAll().subscribe((res: HttpResult) => {
-      if (res.status == 'success') {
-        console.log('get all books unread successful!');
-        this.books = res.data;
-      } else {
-        console.log('cannot get any books!');
+  getAllBook() {
+    this.bookService.getAll().subscribe((res: IBook[]) => {
+      for (const book of res) {
+        if (book.read == true) {
+          this.books.push(book);
+        }
       }
     });
   }
 
-  delete(id: number) {
-    if (confirm('Are you sure to delete this book?')) {
-      this.bookService.destroy(id).subscribe((res: HttpResult) => {
-        if (res.status == 'success') {
-          this.getAllBook();
-          this.message = res.message;
-        }
-      });
-    }
-  }
-
+  // delete(id: number) {
+  //   if (confirm('Are you sure to delete this book?')) {
+  //     this.bookService.destroy(id).subscribe((res: IBook) => {
+  //       if (res.read == false) {
+  //         this.getAllBook();
+  //       }
+  //     });
+  //   }
+  // }
 }
