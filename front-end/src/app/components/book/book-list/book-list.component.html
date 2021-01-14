@@ -10,6 +10,9 @@
 <!--    *ngIf="book.read == false;"-->
     <td >{{book.name}}</td>
     <td>{{book.read}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(book.id)">Delete</button>
+    </td>
   </tr>
   </tbody>
 </table>

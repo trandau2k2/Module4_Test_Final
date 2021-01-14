@@ -1,1 +1,20 @@
-<p>book-list-unread works!</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Unreading List </th>
+    <th scope="col">Mark</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books;">
+    <!--    *ngIf="book.read == false;"-->
+    <td >{{book.name}}</td>
+    <ng-template [ngIf]="book.field == false">
+      <td>Chưa đọc</td>
+    </ng-template>
+    <td>
+      <button class="btn btn-danger" (click)="delete(book.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,1 +1,22 @@
-<p>book-add works!</p>
+<div class="card">
+  <div class="card-header">
+    Add New Book
+  </div>
+  <div class="card-body">
+    <form [formGroup]="formAddPost" (ngSubmit)="submit()">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" formControlName="name" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Mark</label>
+        <select formControlName="field" class="form-select" aria-label="Default select example">
+          <option selected>Open this </option>
+          <option value="true">Read</option>
+          <option value="false">Unread</option>
+        </select>
+      </div>
+      <button [disabled]="formAddBook.invalid" type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>
