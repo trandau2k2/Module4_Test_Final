@@ -1,27 +1,25 @@
 <div class="container">
-  <button class="btn btn-secondary" mt-3 routerLink="['/']">Về trang chủ</button>
+  <button class="btn btn-secondary" mt-3 routerLink="add">Thêm sách mới </button>
 </div>
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">Reading List</th>
-    <th scope="col">Mark</th>
+    <th scope="col">Danh sách đoc</th>
+    <th scope="col">Đánh dấu</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let book of books;">
     <td>{{book.name}}</td>
     <td>
-    </td>
-    <td>
-      <button class="btn btn-danger" >Delete</button>
+      <button type="button" class="btn btn-success">Đã đọc</button>
     </td>
 <!--    (click)="delete(book.id)"-->
   </tr>
   </tbody>
 </table>
 
-<button type="button" class="btn btn-primary" RouterLink="books/">Danh sách đọc</button>
-<button type="button" class="btn btn-primary" RouterLink="books-unread/">Danh sách đã đọc</button>
+<button type="button" class="btn btn-primary" RouterLink="books-unread">Danh sách đọc</button>
+<button type="button" class="btn btn-primary" RouterLink="books">Danh sách đã đọc</button>
 
 

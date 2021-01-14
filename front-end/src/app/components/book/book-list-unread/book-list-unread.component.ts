@@ -6,7 +6,7 @@ import {HttpResult} from '../../../_core/HttpResult';
 @Component({
   selector: 'app-book-list-unread',
   templateUrl: './book-list-unread.component.html',
-  styleUrls: ['./book-list.component-unread.css']
+  styleUrls: ['./book-list-unread.component.css']
 })
 export class BookListUnreadComponent implements OnInit {
 

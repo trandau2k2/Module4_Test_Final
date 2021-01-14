@@ -22,17 +22,17 @@ export class BookAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAddBook = this.fb.group({
-      name: ['', [Validators.required]]
+      name: ['', [Validators.required]],
+      read: true,
     });
   }
 
   submit() {
     // @ts-ignore
     let data = this.formAddBook.value;
+    console.log(data)
     this.bookService.create(data).subscribe((res: IBook) => {
-      if (res.name != '' ) {
-        this.router.navigate(['books/']);
-      }
+        this.router.navigate(['books']);
     })
   }
 

@@ -12,11 +12,11 @@ const routes: Routes = [
     component: BookListComponent
   },
   {
-    path: '',
+    path: 'add',
     component: BookAddComponent
   },
   {
-    path: '',
+    path: 'books-unread',
     component: BookListUnreadComponent
   },
 ];

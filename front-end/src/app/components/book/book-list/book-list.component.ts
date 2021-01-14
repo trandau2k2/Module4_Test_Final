@@ -10,7 +10,7 @@ import {IBook} from '../../IBook';
 })
 export class BookListComponent implements OnInit {
 
-  books: IBook[] ;
+  books: IBook[]=[] ;
 
   constructor(private bookService: BookService) {
   }
@@ -21,6 +21,7 @@ export class BookListComponent implements OnInit {
 
   getAllBook() {
     this.bookService.getAll().subscribe((res: IBook[]) => {
+      console.log(res)
       for (const book of res) {
         if (book.read == false) {
           this.books.push(book);

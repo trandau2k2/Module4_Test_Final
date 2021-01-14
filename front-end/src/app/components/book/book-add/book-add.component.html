@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <form class="d-flex" [formGroup]="formAddBook" (ngSubmit)="submit()">
-      <input class="form-control me-2" type="search" placeholder="New Book Name" aria-label="Add">
+      <input  formControlName="name" class="form-control me-2" type="search" placeholder="New Book Name" aria-label="Add">
       <button class="btn btn-outline-success" type="submit">Add</button>
     </form>
   </div>
