@@ -1,1 +1,14 @@
-<p>book-list works!</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Reading List </th>
+    <th scope="col">Mark</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books;">
+    <td *ngIf="book.read == false;">{{book.name}}</td>
+    <td>Read</td>
+  </tr>
+  </tbody>
+</table>
