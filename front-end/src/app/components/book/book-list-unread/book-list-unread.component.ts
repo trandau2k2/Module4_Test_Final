@@ -10,7 +10,7 @@ import {HttpResult} from '../../../_core/HttpResult';
 })
 export class BookListUnreadComponent implements OnInit {
 
-  books: IBook[];
+  books: IBook[] = [];
 
   constructor(private bookService: BookService) {
   }

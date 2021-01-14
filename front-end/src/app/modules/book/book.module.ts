@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {BookAddComponent} from '../../components/book/book-add/book-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BookListUnreadComponent} from "../../components/book/book-list-unread/book-list-unread.component";
+import {BookUpdateComponent} from "../../components/book/book-update/book-update.component";
 
 const routes: Routes = [
   {
@@ -16,8 +17,12 @@ const routes: Routes = [
     component: BookAddComponent
   },
   {
-    path: 'books-unread',
+    path: 'unread',
     component: BookListUnreadComponent
+  },
+  {
+    path: 'update',
+    component: BookUpdateComponent
   },
 ];
 
@@ -26,10 +31,12 @@ const routes: Routes = [
   declarations: [
     BookListComponent,
     BookAddComponent,
-    BookListUnreadComponent
+    BookListUnreadComponent,
+    BookUpdateComponent
   ],
   exports: [
-    BookAddComponent
+    BookAddComponent,
+    BookUpdateComponent
   ],
   imports: [
     [RouterModule.forChild(routes)],

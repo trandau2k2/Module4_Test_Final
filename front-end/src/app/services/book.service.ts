@@ -20,9 +20,9 @@ export class BookService {
   //   return this.http.delete<IBook>(environment.url_backend + 'books');
   // }
   //
-  // update(id: number):Observable<IBook> {
-  //   return this.http.put<IBook>(environment.url_backend + 'books' + id + 'update')
-  // }
+  update(data: IBook):Observable<IBook> {
+    return this.http.patch<IBook>(environment.url_backend + 'books', data)
+  }
 
   create(data: IBook): Observable<IBook> {
     return this.http.post<IBook>(environment.url_backend + 'books', data);

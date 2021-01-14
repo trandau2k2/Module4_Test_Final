@@ -1,11 +1,12 @@
 <div class="container">
-  <button class="btn btn-secondary" mt-3 routerLink="add">Thêm sách mới </button>
+  <button class="btn btn-secondary" mt-3 routerLink="add">Thêm sách mới</button>
 </div>
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">Danh sách đoc</th>
+    <th scope="col">Danh sách đọc</th>
     <th scope="col">Đánh dấu</th>
+    <th scope="col">Sưả tên sách</th>
   </tr>
   </thead>
   <tbody>
@@ -14,12 +15,14 @@
     <td>
       <button type="button" class="btn btn-success">Đã đọc</button>
     </td>
-<!--    (click)="delete(book.id)"-->
+    <td>
+      <button type="button" class="btn btn-light">Update</button>
+    </td>
   </tr>
   </tbody>
 </table>
 
-<button type="button" class="btn btn-primary" RouterLink="books-unread">Danh sách đọc</button>
-<button type="button" class="btn btn-primary" RouterLink="books">Danh sách đã đọc</button>
+<button type="button" class="btn btn-primary" RouterLink="unread">Danh sách đã đọc</button>
+<button type="button" class="btn btn-primary" RouterLink="">Danh sách đọc</button>
 
 

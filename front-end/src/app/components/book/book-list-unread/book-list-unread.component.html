@@ -9,12 +9,11 @@
   <tbody>
   <tr *ngFor="let book of books;">
     <td>{{book.name}}</td>
-    <ng-template [ngIf]="book.read == false">
-      <td>Chưa đọc</td>
-    </ng-template>
     <td>
-      <button class="btn btn-danger" >Delete</button>
-<!--      (click)="delete(book.id)"-->
+      <button type="button" class="btn btn-success">Đã đọc</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-light">Update</button>
     </td>
   </tr>
   </tbody>

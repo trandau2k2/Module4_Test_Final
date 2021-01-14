@@ -7,6 +7,7 @@ import { MainComponent } from './layouts/core/main/main.component';
 import { MenuComponent } from './layouts/core/menu/menu.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { BookUpdateComponent } from './components/book/book-update/book-update.component';
 
 @NgModule({
   declarations: [
