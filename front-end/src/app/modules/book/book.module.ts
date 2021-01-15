@@ -21,7 +21,7 @@ const routes: Routes = [
     component: BookListUnreadComponent
   },
   {
-    path: 'update',
+    path: '/{id}/update',
     component: BookUpdateComponent
   },
 ];

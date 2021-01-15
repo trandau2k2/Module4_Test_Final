@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BookService} from "../../../services/book.service";
-import {Route, Router} from "@angular/router";
+import {Route, Router, ActivatedRoute, ParamMap} from "@angular/router";
 import {IBook} from "../../IBook";
 
 @Component({
@@ -12,20 +12,33 @@ import {IBook} from "../../IBook";
 export class BookUpdateComponent implements OnInit {
 
   formUpdateBook: FormGroup;
+  private idBook: IBook;
 
   constructor(private fb: FormBuilder,
               private bookService: BookService,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute,
+  ) {
+  }
 
-  ngOnInit(): void {
+  ngOnInit()
+    :
+    void {
+    this.route.queryParams.subscribe(params => {
+      this.idBook.id = params['id'];
+    });
+
     this.formUpdateBook = this.fb.group({
-      id: 2,
+      id: this.idBook.id,
       name: ['', [Validators.required]],
     });
   }
 
   submit() {
-    let data = this.formUpdateBook.value
+    let data = this.formUpdateBook.value;
+    this.bookService.update(data).subscribe((res: IBook) => {
+      this.router.navigate(['books']);
+    });
   }
 
 }

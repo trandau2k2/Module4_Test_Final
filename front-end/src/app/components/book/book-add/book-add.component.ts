@@ -30,7 +30,6 @@ export class BookAddComponent implements OnInit {
   submit() {
     // @ts-ignore
     let data = this.formAddBook.value;
-    console.log(data)
     this.bookService.create(data).subscribe((res: IBook) => {
         this.router.navigate(['books']);
     })
